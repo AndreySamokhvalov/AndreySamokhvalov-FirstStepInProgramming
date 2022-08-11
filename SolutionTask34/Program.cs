@@ -30,7 +30,7 @@ void PrintIntArray(int[] inputArray)
     Console.WriteLine(inputArray[i]);
 }
 
-void CountEven(int[] CountEvenArray) // метод, считающий количество четных членов созданного массива
+int CountEven(int[] CountEvenArray) // метод, считающий количество четных членов созданного массива
 {
     int b = 0;  // переменная для накопления
     int i = 0;
@@ -42,14 +42,14 @@ void CountEven(int[] CountEvenArray) // метод, считающий коли�
         }
         i++;
     }
-    // вывод количества четных членнов массива
-    Console.WriteLine("Количество четных членов заданного массива: " + b);
-
+   return b;
 }
 
-FillingArray();
-PrintIntArray(FillingArray());
-CountEven(FillingArray());
+int[] buferArray = FillingArray();
+PrintIntArray(buferArray);
+Console.Write("Количество нечетных членов массива = ");
+Console.WriteLine(CountEven(buferArray));
+
 
 
 
