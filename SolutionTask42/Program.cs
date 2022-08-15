@@ -1,4 +1,4 @@
-﻿Console.WriteLine(Covert.ToString(int.Parse(Console.ReadLine()), 2));
+﻿Console.WriteLine(Convert.ToString(int.Parse(Console.ReadLine()), 2));
 
 
 // string numbe1 = Console.ReadLine();
