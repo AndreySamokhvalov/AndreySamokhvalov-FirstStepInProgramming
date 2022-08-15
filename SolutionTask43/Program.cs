@@ -6,7 +6,7 @@ float X;
 float Y;
 
 Console.Clear();
-Console.WriteLine("ЕwoStraightLines"); //Программа,, которая найдёт точку пересечения двух прямых, заданных уравнениями
+Console.WriteLine("TwoStraightLines"); //Программа,, которая найдёт точку пересечения двух прямых, заданных уравнениями
 Console.WriteLine("Welcome!");
 Console.WriteLine("Для уравнений вида Y = kX + b ");
 
