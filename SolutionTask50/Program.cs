@@ -1,13 +1,21 @@
 ﻿Console.Clear();
 Console.WriteLine("Point [i,j]"); //Программа  которая на вход принимает позиции элемента в двумерном массиве, 
 Console.WriteLine("Welcome!");//  и возвращает значение этого элемента или же указание, что такого элемента нет.
-Console.Write("Введите позицию элемента в формате ");
-Console.ForegroundColor = ConsoleColor.Red;
-Console.WriteLine("[i,j]");
+Console.WriteLine("Для создания двумерного массива введите количество строк:");
+Console.ForegroundColor = ConsoleColor.Yellow;
+int countRow = int.Parse(Console.ReadLine());
 Console.ResetColor();
+Console.WriteLine("Теперь введите количество столбцов:");
+Console.ForegroundColor = ConsoleColor.Yellow;
+int countColumn = int.Parse(Console.ReadLine());
+Console.ResetColor();
+Console.Write("Введите позицию элемента в формате ");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("[i,j]");
 
 // принимаем на вход позицию элемента в формате строки
 string dataString = Console.ReadLine();
+Console.ResetColor();
 
 // метод, создающий рандомный двумерный массив с указаными параметрами
 int[,] FillTwoDimArray(int countRow, int countColumn)
@@ -28,7 +36,6 @@ int[,] FillTwoDimArray(int countRow, int countColumn)
     }
     return outArray;
 }
-
 
 //метод для печати двумерного массива
 void PrintTwoDimArray(int[,] inputArray)
@@ -92,6 +99,6 @@ void ShowValue(int[,] mas)
     }
 }
 
-int[,] twoDimArray = FillTwoDimArray(5, 5);
+int[,] twoDimArray = FillTwoDimArray(countRow, countColumn);
 PrintTwoDimArray(twoDimArray);
 ShowValue(twoDimArray);
