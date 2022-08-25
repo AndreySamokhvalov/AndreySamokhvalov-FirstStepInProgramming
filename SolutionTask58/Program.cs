@@ -28,8 +28,8 @@ int[] ReadDataSecond()
     return data;
 }
 
-// метод, создающий первую матрицу с указаными параметрами
-int[,] FillFirrstTwoDimArray(int[] data)
+// метод, создающий матрицу с указаными параметрами
+int[,] FillTwoDimArray(int[] data)
 {
     int countRow = data[0];
     int countColumn = data[1];
@@ -50,32 +50,10 @@ int[,] FillFirrstTwoDimArray(int[] data)
     return firstOutArray;
 }
 
-// метод, создающий вторую матрицу с указаными параметрами
-int[,] FillSecondTwoDimArray(int[] data)
-{
-    int countRow = data[0];
-    int countColumn = data[1];
-    System.Random numberSyntezator = new System.Random();
-    int i = 0; int j = 0;
-    int[,] secondOutArray = new int[countRow, countColumn];
-    while (i < countRow)
-    {
-        j = 0;
-        while (j < countColumn)
-        {
-            secondOutArray[i, j] = numberSyntezator.Next(0, 10);
-            j++;
-        }
-        i++;
-
-    }
-    return secondOutArray;
-}
-
 //метод для печати  матриц
 void PrintTwoDimArray(int[,] inputArray)
 {
-   // Console.WriteLine("Вот первая матрица:");
+    Console.WriteLine("Матрица:");
     Console.WriteLine();
     int i = 0; int j = 0;
 
@@ -126,36 +104,11 @@ int[,] СompositionArray(int[,] firsttArray, int[,] secondArray)
     return compositArray;
 }
 
-//метод для печати перемноженной матрицы
-void PrintOutTwoDimArray(int[,] inputArray)
-{
-    Console.WriteLine("Вот перемноженная матрица:");
-    Console.WriteLine();
-    int i = 0; int j = 0;
-
-    while (i < inputArray.GetLength(0))
-    {
-        j = 0;
-        while (j < inputArray.GetLength(1))
-        {
-            Console.Write(inputArray[i, j] + "   ");
-            j++;
-        }
-
-        Console.Write("\n");
-        Console.WriteLine();
-        i++;
-    }
-}
-
-
 int[] inputDataFirst = ReadDataFirst();
 int[] inputDataSecond = ReadDataSecond();
-FillFirrstTwoDimArray(inputDataFirst);
-FillSecondTwoDimArray(inputDataSecond);
-int[,] firstTwoDimArray = FillFirrstTwoDimArray(inputDataFirst);
+int[,] firstTwoDimArray = FillTwoDimArray(inputDataFirst);
 PrintTwoDimArray(firstTwoDimArray);
-int[,] secondTwoDimArray = FillSecondTwoDimArray(inputDataSecond);
+int[,] secondTwoDimArray = FillTwoDimArray(inputDataSecond);
 PrintTwoDimArray(secondTwoDimArray);
 СompositionArray(firstTwoDimArray, secondTwoDimArray);
-PrintOutTwoDimArray(СompositionArray(firstTwoDimArray, secondTwoDimArray));
+PrintTwoDimArray(СompositionArray(firstTwoDimArray, secondTwoDimArray));
