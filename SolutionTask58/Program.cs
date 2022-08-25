@@ -72,32 +72,10 @@ int[,] FillSecondTwoDimArray(int[] data)
     return secondOutArray;
 }
 
-//метод для печати первой матрицы
-void PrintFirstTwoDimArray(int[,] inputArray)
+//метод для печати  матриц
+void PrintTwoDimArray(int[,] inputArray)
 {
-    Console.WriteLine("Вот первая матрица:");
-    Console.WriteLine();
-    int i = 0; int j = 0;
-
-    while (i < inputArray.GetLength(0))
-    {
-        j = 0;
-        while (j < inputArray.GetLength(1))
-        {
-            Console.Write(inputArray[i, j] + "   ");
-            j++;
-        }
-
-        Console.Write("\n");
-        Console.WriteLine();
-        i++;
-    }
-}
-
-//метод для печати второй матрицы
-void PrintSecondTwoDimArray(int[,] inputArray)
-{
-    Console.WriteLine("Вот вторая матрица:");
+   // Console.WriteLine("Вот первая матрица:");
     Console.WriteLine();
     int i = 0; int j = 0;
 
@@ -176,8 +154,8 @@ int[] inputDataSecond = ReadDataSecond();
 FillFirrstTwoDimArray(inputDataFirst);
 FillSecondTwoDimArray(inputDataSecond);
 int[,] firstTwoDimArray = FillFirrstTwoDimArray(inputDataFirst);
-PrintFirstTwoDimArray(firstTwoDimArray);
+PrintTwoDimArray(firstTwoDimArray);
 int[,] secondTwoDimArray = FillSecondTwoDimArray(inputDataSecond);
-PrintSecondTwoDimArray(secondTwoDimArray);
+PrintTwoDimArray(secondTwoDimArray);
 СompositionArray(firstTwoDimArray, secondTwoDimArray);
 PrintOutTwoDimArray(СompositionArray(firstTwoDimArray, secondTwoDimArray));
